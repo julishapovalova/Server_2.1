@@ -1,11 +1,18 @@
+package client;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
 public class ClientGet extends Thread {
 	DataInputStream in = null;
+	String nickname;
 
 	ClientGet(DataInputStream in) {
+		this.in = in;
+		this.start();
+	}
+
+	ClientGet(String nickname, DataInputStream in) {
 		this.in = in;
 		this.start();
 	}
