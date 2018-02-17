@@ -6,13 +6,17 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Server {
-	static ArrayList<Socket> soc = new ArrayList<Socket>();
+	static ArrayList<SocketFromClient> soc = new ArrayList<>();
+	static ArrayList<String> name = new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
 		ServerSocket ss = new ServerSocket(4444);
 		ServerIO sio = new ServerIO(soc);
+		int i=0;
 		while (true) {
-			soc.add(ss.accept());
+			SocketFromClient s1=new SocketFromClient(ss.accept());
+			soc.add(i,s1);
+			i++;
 		}
 	}
 

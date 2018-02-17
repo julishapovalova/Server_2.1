@@ -3,13 +3,12 @@ package server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.util.ArrayList;
 
-public class ServerIO extends Thread {
+public class RegisterUser {
     ArrayList<SocketFromClient> soc = null;
 
-    public ServerIO(ArrayList<SocketFromClient> soc) {
+    public RegisterUser(ArrayList<SocketFromClient> soc) {
         this.soc = soc;
         this.start();
     }
